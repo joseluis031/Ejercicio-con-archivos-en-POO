@@ -1,10 +1,12 @@
+import csv
 class archivo:
     
-    def __init__(self,fichero,calif,datos):
-        self.fichero = fichero
-        self.calif = calif
-        self.datos = datos
+    def __init__(self,File):
+        self.File = File
+        
     def lectura(self):
-        with open(self.fichero, "r") as self.calif:
-            self.datos = []
-            self.lista_diccionario = dict()
+        with open('calificaciones.csv') as self.File:
+            reader = csv.reader(self.File, delimiter=';')
+            for row in reader:
+                print(row)
+        
