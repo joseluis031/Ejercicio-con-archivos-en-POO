@@ -16,3 +16,4 @@ class archivos1:
             Asistencia = i[2]
             Practicas = i[7]
             lista.append(i)
+            print(f"{Apellidos} con {Asistencia} % de asistencia ha obetenido unas calificaciones de: \n Nota del parcial1: {Nota_parcial1} \n Nota del parcial2: {Nota_parcial2} \n Nota en practicas: {Practicas}")
