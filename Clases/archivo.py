@@ -1,5 +1,5 @@
 import csv
-class archivo:
+class archivos1:
     
     def __init__(self,File):
         self.File = File
@@ -7,6 +7,12 @@ class archivo:
     def lectura(self):
         with open('calificaciones.csv') as self.File:
             reader = csv.reader(self.File, delimiter=';')
-            for row in reader:
-                print(row)
-        
+            next(reader, None)
+        lista = []
+        for i in reader:
+            Apellidos = i[0]
+            Nota_parcial1 = i[3]
+            Nota_parcial2 = i[4]
+            Asistencia = i[2]
+            Practicas = i[7]
+            lista.append(i)
