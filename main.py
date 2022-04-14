@@ -3,5 +3,6 @@ if __name__ == "__main__":
     if main == 1:
         from Clases.archivo import archivos1
         
-        uno = archivos1("calificaciones.csv")
+        lista = []
+        uno = archivos1(lista)
         uno.lectura()

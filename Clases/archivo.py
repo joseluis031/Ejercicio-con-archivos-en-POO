@@ -35,7 +35,7 @@ class archivos2:
                 Nota_parcial2 = i[4]
                 Asistencia = i[2]
                 Practicas = i[7]
-                Nota_final = i[3] + 0.3 * i[4] + 0.4 * i[7]
+                Nota_final = (0.3 * Nota_parcial1) + (0.3 * Nota_parcial2) + (0.4 * Practicas)
                 self.lista.append(i)
                 
                 print(f"{Apellidos} con {Asistencia} de asistencia ha obetenido unas calificaciones de:" 
