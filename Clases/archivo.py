@@ -26,23 +26,13 @@ class archivos2:
         archivos1.__init__(self,lista)
         
     def lectura2(self):
-        with open('calificaciones.csv') as self.File:
-            reader = csv.reader(self.File, delimiter=';')
-            next(reader, None)
-            self.lista = []
-            for i in range(0, len(self.lista)):
-                Apellidos = i[0]
-                Nota_parcial1 = i[3]
-                Nota_parcial2 = i[4]
-                Asistencia = i[2]
-                Practicas = i[7]
-                Nota_final = 0.3 * float(self.lista[i][3])
-                self.lista.append(Nota_final)
-                return self.lista
-                
-                print(f"{Apellidos} con {Asistencia} de asistencia ha obetenido unas calificaciones de:" 
-                    f"\n Nota del parcial1: {Nota_parcial1} \n Nota del parcial2: {Nota_parcial2} \n Nota en practicas: {Practicas}\n"
-                    f"Su nota final es: {Nota_final}")
+        with open('calificaciones.csv',newline='') as f:
+              r = csv.reader(f)
+              data = [line for line in r]
+        with open('calificaciones.csv','w',newline='') as f:
+              w = csv.writer(f)
+              w.writerow(['Nota_Total'])
+              w.writerows(data)
 
 lista = []
 dos = archivos2(lista)
