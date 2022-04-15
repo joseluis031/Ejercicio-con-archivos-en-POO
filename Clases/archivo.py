@@ -29,14 +29,16 @@ class archivos2:
         with open('calificaciones.csv') as self.File:
             reader = csv.reader(self.File, delimiter=';')
             next(reader, None)
-            for i in reader:
+            self.lista = []
+            for i in range(0, len(self.lista)):
                 Apellidos = i[0]
                 Nota_parcial1 = i[3]
                 Nota_parcial2 = i[4]
                 Asistencia = i[2]
                 Practicas = i[7]
-                Nota_final = (0.3 * Nota_parcial1) + (0.3 * Nota_parcial2) + (0.4 * Practicas)
-                self.lista.append(i)
+                Nota_final = 0.3 * float(self.lista[i][3])
+                self.lista.append(Nota_final)
+                return self.lista
                 
                 print(f"{Apellidos} con {Asistencia} de asistencia ha obetenido unas calificaciones de:" 
                     f"\n Nota del parcial1: {Nota_parcial1} \n Nota del parcial2: {Nota_parcial2} \n Nota en practicas: {Practicas}\n"
