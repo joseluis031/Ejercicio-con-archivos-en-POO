@@ -34,6 +34,6 @@ class archivos2:
               w.writerow(['Nota_Total'])
               w.writerows(data)
 
-lista = []
-dos = archivos2(lista)
-dos.lectura2()
+import pandas as pd
+
+class archivos2_1:
