@@ -1,4 +1,5 @@
 import csv
+from msilib.schema import File
 
 class archivos1:
     
@@ -37,3 +38,16 @@ class archivos2:
 import pandas as pd
 
 class archivos2_1:
+    def __init__(self,File):
+        self.File = File
+    
+    def lectura2_1(self):
+        leer = pd.read_csv(self.File, header = 0)
+        lista = []
+        lista_apellidos = list(leer["Apellidos"])
+        lista_parcial1 = list(leer["Parcial1"])
+        lista_parcial2 = list(leer["Parcial2"])
+        lista_asistencia = list(leer["Asistencia"])
+        lista_practicas = list(leer["Practicas"])
+        
+        
