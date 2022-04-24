@@ -49,5 +49,13 @@ class archivos2_1:
         lista_parcial2 = list(leer["Parcial2"])
         lista_asistencia = list(leer["Asistencia"])
         lista_practicas = list(leer["Practicas"])
-        
-        
+        lista_notafinal = 0.3 * leer["Parcial1"] + 0.3 * leer["Parcial2"] + 0.4 * leer["Practicas"]
+        for i in range(1,17):
+            tabla = (f"{lista_apellidos} con {lista_asistencia} de asistencia ha obetenido unas calificaciones de:" 
+                    f"\n Nota del parcial1: {lista_parcial1} \n Nota del parcial2: {lista_parcial2} \n Nota en practicas: {lista_practicas}\n")
+            Notafinal = list(lista_notafinal)[i]
+            lista.append(tabla)
+            lista[i][0].append(Notafinal)
+        return lista
+hola = archivos2_1(File)
+hola.lectura2_1()
