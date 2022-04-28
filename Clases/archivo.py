@@ -50,8 +50,18 @@ class archivos2_1:
             append =  cosita1 + cosita2 + cosita3
             lista.append(append)
         self.file["Nota Final"] = lista
-        print(self.file)
+        lista1 = []
+        for i in range(len(self.file)):    
+            if self.file["Asistencia"][i] >= 0.75 and self.file["Parcial1"][i]>=4 and self.file["Parcial2"][i]>=4 and self.file["Practicas"][i]>=4 and self.file["Nota Final"][i]>=5:
+                cosita4 = True
+            else:
+                cosita4 = False
+            lista1.append(cosita4)
+        
+        self.file["Aprobados"] = lista1
+        print(self.file) 
 
 File = "calificaciones.csv"
 hola = archivos2_1(File)
 hola.lectura2_1()
+
