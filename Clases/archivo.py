@@ -7,7 +7,7 @@ class archivos1:
         
         
     def lectura(self):
-        with open('calificaciones.csv') as self.File:
+        with open('calificacionesejercicio1.csv') as self.File:
             reader = csv.reader(self.File, delimiter=';')
             next(reader, None)
             for i in reader:
