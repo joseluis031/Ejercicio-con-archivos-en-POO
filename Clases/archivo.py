@@ -7,7 +7,7 @@ class archivos1:
         
         
     def lectura(self):
-        with open('calificacionesejercicio1.csv') as self.File:
+        with open('calif_ejerc1.csv') as self.File:
             reader = csv.reader(self.File, delimiter=';')
             next(reader, None)
             for i in reader:
@@ -42,7 +42,7 @@ class archivos2_1:
     
     def lectura2_1(self):
         lista = []
-        print (len(self.file))
+        
         for i in range(len(self.file)):
             cosita1 = 0.3*int(self.file["Parcial1"][i])
             cosita2 = 0.3*int(self.file["Parcial2"][i])
@@ -61,7 +61,5 @@ class archivos2_1:
         self.file["Aprobados"] = lista1
         print(self.file) 
 
-File = "calificaciones.csv"
-hola = archivos2_1(File)
-hola.lectura2_1()
+
 
