@@ -38,16 +38,19 @@ import pandas as pd
 
 class archivos2_1:
     def __init__(self,File):
-        self.File = File
+        self.file = pd.read_csv(File)
     
     def lectura2_1(self):
-        leer = pd.read_csv(self.File)
         lista = []
-        for i in range(len(self.File)):
-            append = 0.3 * leer["Parcial1"][i] + 0.3 * leer["Parcial2"][i] + 0.4 * leer["Practicas"][i]
+        print (len(self.file))
+        for i in range(len(self.file)):
+            cosita1 = 0.3*int(self.file["Parcial1"][i])
+            cosita2 = 0.3*int(self.file["Parcial2"][i])
+            cosita3 = 0.4*int(self.file["Practicas"][i])
+            append =  cosita1 + cosita2 + cosita3
             lista.append(append)
-        leer["Nota Final"] = lista
-        print(leer)
+        self.file["Nota Final"] = lista
+        print(self.file)
 
 File = "calificaciones.csv"
 hola = archivos2_1(File)
