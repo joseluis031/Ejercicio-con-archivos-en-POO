@@ -1,6 +1,6 @@
 # Ejercicio-con-archivos-en-POO
 
-El link de este repositorio es[GitHub]:(https://github.com/joseluis031/Ejercicio-con-archivos-en-POO.git)
+El link de este repositorio es:[GitHub](https://github.com/joseluis031/Ejercicio-con-archivos-en-POO.git)
 
 ## Codigo del ejercicio
 ```
