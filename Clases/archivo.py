@@ -43,20 +43,11 @@ class archivos2_1:
     def lectura2_1(self):
         leer = pd.read_csv(self.File)
         lista = []
-        lista_apellidos = list(leer["Apellidos"])
-        lista_parcial1 = list(leer["Parcial1"])
-        lista_parcial2 = list(leer["Parcial2"])
-        lista_asistencia = list(leer["Asistencia"])
-        lista_practicas = list(leer["Practicas"])
         for i in range(len(self.File)):
-            leer["lista_notafinal"][i] = 0.3 * leer["Parcial1"][i] + 0.3 * leer["Parcial2"][i] + 0.4 * leer["Practicas"][i]
-        for i in range(1,17):
-            tabla = (f"{lista_apellidos} con {lista_asistencia} de asistencia ha obetenido unas calificaciones de:" 
-                    f"\n Nota del parcial1: {lista_parcial1} \n Nota del parcial2: {lista_parcial2} \n Nota en practicas: {lista_practicas}\n")
-            Notafinal = list(leer["lista_notafinal"])[i]
-            lista.append(tabla)
-            lista[i][0].append(Notafinal)
-        return lista
+            append = 0.3 * leer["Parcial1"][i] + 0.3 * leer["Parcial2"][i] + 0.4 * leer["Practicas"][i]
+            lista.append(append)
+        leer["Nota Final"] = lista
+        print(leer)
 
 File = "calificaciones.csv"
 hola = archivos2_1(File)
